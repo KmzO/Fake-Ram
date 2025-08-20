@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free RAM Download</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    select, button {
+      padding: 10px 15px;
+      font-size: 16px;
+      margin: 10px;
+      border-radius: 8px;
+      border: none;
+    }
+    select {
+      background: #fff;
+      color: #333;
+    }
+    button {
+      background: #ff4757;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    button:hover {
+      background: #ff6b81;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      display: inline-block;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .progress-container {
+      width: 80%;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      margin: 20px auto;
+      height: 30px;
+      position: relative;
+      display: none;
+    }
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: #00ff99;
+      border-radius: 10px;
+      transition: width 0.2s;
+    }
+    .progress-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: bold;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🚀 Free RAM Download</h1>
+    <p>เลือกขนาด RAM ที่ต้องการแล้วกดดาวน์โหลด!</p>
+    <select id="ramSize">
+      <option value="4GB">4GB</option>
+      <option value="8GB">8GB</option>
+      <option value="16GB">16GB</option>
+      <option value="32GB">32GB</option>
+    </select>
+    <br>
+    <button onclick="downloadRAM()">Download</button>
+
+    <div class="progress-container" id="progressContainer">
+      <div class="progress-bar" id="progressBar"></div>
+      <span class="progress-text" id="progressText">0%</span>
+    </div>
+  </div>
+
+  <script>
+    function downloadRAM() {
+      const size = document.getElementById("ramSize").value;
+      alert("กำลังดาวน์โหลด RAM " + size + " ... 🚀");
+
+      document.getElementById("progressContainer").style.display = "block";
+      let progressBar = document.getElementById("progressBar");
+      let progressText = document.getElementById("progressText");
+
+      let width = 0;
+      let interval = setInterval(() => {
+        if (width >= 100) {
+          clearInterval(interval);
+          // Rickroll เมื่อโหลดเสร็จ
+          window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+        } else {
+          width++;
+          progressBar.style.width = width + "%";
+          progressText.innerText = width + "%";
+        }
+      }, 50); // ความเร็วโหลด (ms)
+    }
+  </script>
+</body>
+</html>
